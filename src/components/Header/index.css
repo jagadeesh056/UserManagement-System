@@ -1,0 +1,20 @@
+.headerSection {
+    padding: 18px;
+    height: 500px;
+    width: 25vh;
+    margin-right: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logoutDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+h1 {
+    font-size: 25px;
+}
