@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# React User Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React-based user management system that allows for creating, reading, updating, and deleting user records with a clean and intuitive interface.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User List Display**: View all users in a paginated table format
+- **CRUD Operations**:
+  - Create new users with detailed information
+  - Read existing user data
+  - Update user information through an edit modal
+  - Delete users with confirmation dialog
+- **Pagination**: Handle large datasets with client-side pagination
+- **Form Validation**: Basic form validation for required fields
+- **Responsive Design**: Works across different screen sizes
+- **Sidebar Navigation**: Easy access to different sections
+- **Authentication**: Basic JWT token-based authentication check
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/
+│   ├── Header/
+│   │   ├── index.js
+│   │   └── index.css
+│   ├── HomePage/
+│   │   ├── index.js
+│   │   └── index.css
+│   ├── UsersList/
+│   │   ├── index.js
+│   │   └── index.css
+│   └── UserForm/
+│       ├── index.js
+│       └── index.css
+└── App.js
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application will be available at `http://localhost:3000`
 
-### `npm test`
+## API Integration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application uses JSONPlaceholder as a mock API. In a production environment, replace the API endpoints in `HomePage.js` with your actual backend URLs:
 
-### `npm run build`
+- GET users: `https://jsonplaceholder.typicode.com/users`
+- POST new user: `https://jsonplaceholder.typicode.com/users`
+- PUT update user: `https://jsonplaceholder.typicode.com/users/${id}`
+- DELETE user: `https://jsonplaceholder.typicode.com/users/${id}`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges Faced
+1. **State Management :**
+   - Managing state across multiple components using class components proved complex, especially with the user data transformations between the form and list views.
+2. **Data Structure Consistency :**
+   - Initial challenges with firstname/lastname field naming inconsistencies between form submission and display.
+   - Had to ensure data structure remained consistent between API responses and local state.
+3. **Form Handling :**
+   - Modal form state management required careful handling of mounting/unmounting.
+   - Form validation was basic and could benefit from more robust implementation.
+4. **API Integration:**
+   - Had to implement optimistic updates while maintaining data consistency.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features to Add
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Search functionality
+- [ ] Sort by columns
+- [ ] Filter by department
+- [ ] User roles and permissions
