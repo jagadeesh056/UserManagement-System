@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { CiEdit } from 'react-icons/ci';
 import { TbHttpDelete } from 'react-icons/tb';
 import './index.css';
